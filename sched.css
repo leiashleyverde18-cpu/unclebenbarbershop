@@ -1,0 +1,235 @@
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+/* TITLE */
+h1 {
+  margin-bottom: 5px;
+}
+
+.sub {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* MAIN LAYOUT */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 30px;
+}
+
+/* CALENDAR */
+.calendar,
+.calendar * {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+   color: #222;
+}
+/* ===== CLEAN CARD BORDERS ===== */
+.calendar,
+.times,
+.summary {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.days, .dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.days div {
+  font-weight: 600;
+  color: #666;
+}
+
+.dates div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dates div:hover {
+  background: #eee;
+}
+
+.active-date {
+  background: #0f5c6e;
+  color: white;
+}
+
+/* TIME SLOTS */
+.times {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.time-grid button {
+  padding: 12px;
+  border: 1px solid #999;
+  background: white;
+  cursor: pointer;
+}
+
+.time-grid button:hover {
+  background: #eee;
+}
+
+.selected-time {
+  background: #0f5c6e !important;
+  color: white;
+}
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.info-panel {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.info-panel h3 {
+  margin-bottom: 15px;
+}
+
+.info-panel label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.info-panel input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+
+/* INPUTS */
+.info-panel input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
+.info-panel input:focus {
+  border-color: #0f5c6e;
+}
+/* RIGHT PANEL */
+.summary {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  color: #000; /* ADD THIS */
+}
+
+/* SUMMARY */
+.summary p {
+  margin: 5px 0;
+}
+
+.book-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #0f5c6e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+
+
+.book-btn:hover {
+  background: #0c4a57;
+}
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .calendar,
+  .times,
+  .summary {
+    padding: 15px;
+  }
+
+  .days div,
+  .dates div {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .sub {
+    font-size: 14px;
+  }
+
+  .dates div {
+    padding: 6px;
+  }
+
+  .time-grid button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
